@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #44a4ac;
+        }
+
+        .clock {
+            margin: auto;
+            justify-items: center;
+            text-align: center;
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #f05c5c;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .date {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+        <div class="flex flex-col items-center mt-8">
+            <div id="clock" class=" my-1 clock"></div>
+            <div class="date" id="currentDate" class="mb-3 text-xl font-bold text-gray-600 dark:text-gray-400 mt-2">
+            </div>
+
+            <br>
+            <h1 class="text-5xl font-bold mb-4">Pomodoro</h1>
+            <p class="mb-4">start working! (do some Push-ups!)</p>
+            <div class="flex items-center mb-4">
+                <button id="startBtn"
+                    class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none">
+                    Start
+                </button>
+                <button id="resetBtn"
+                    class="ml-2 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none">
+                    Reset
+                </button>
+            </div>
+            <div id="timer" class="text-6xl font-bold"></div>
+            <div class="flex items-center mt-4">
+                <div class="mr-2">Work Time:</div>
+                <select id="workTimeSelect" class="py-1 px-2 bg-white dark:bg-gray-700 dark:text-white rounded">
+                    <option value="25">25 min</option>
+                    <option value="45">45 min</option>
+                    <option value="60">60 min</option>
+                </select>
+                <div class="ml-4 mr-2">Rest Time:</div>
+                <select id="restTimeSelect" class="py-1 px-2 bg-white dark:bg-gray-700 dark:text-white rounded">
+                    <option value="5">5 min</option>
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                </select>
+            </div>
+            <div id="musicPlayer" class="mt-8">
+                <div id="musicInfo" class="mt-4 text-gray-600 text-sm text-center">
+                    Music: Not Started
+                </div>
+                <audio id="audioPlayer" src="Sleepless.mp3" preload="auto" class="hidden" loop></audio>
+                <div class="flex justify-center mt-2">
+                    <button id="muteBtn"
+                        class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none">
+                        Mute
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
